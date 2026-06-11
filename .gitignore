@@ -1,0 +1,8 @@
+.env
+logs/
+data/raw_jobs.csv
+data/cleaned_jobs.csv
+model/model.pkl
+__pycache__/
+*.pyc
+*.pyo

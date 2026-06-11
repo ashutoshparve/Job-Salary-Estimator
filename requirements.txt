@@ -1,0 +1,11 @@
+requests
+beautifulsoup4
+pandas
+numpy
+sqlalchemy
+psycopg2-binary
+python-dotenv
+scikit-learn
+fastapi
+uvicorn
+streamlit
