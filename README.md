@@ -125,8 +125,8 @@ streamlit run app/streamlit_app.py
 ## Current Progress
 
 - [x] Phase 1 — Data collection (scraper + cleaner)
-- [ ] Phase 2 — SQL database schema and storage
-- [ ] Phase 3 — ML model training and evaluation
+- [x] Phase 2 — SQL database schema and storage
+- [x] Phase 3 — ML model training and evaluation
 - [ ] Phase 4 — FastAPI backend + query logging
 - [ ] Phase 5 — Streamlit frontend + deployment
 
