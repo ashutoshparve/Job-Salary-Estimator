@@ -80,7 +80,7 @@ Indeed job pages → scraper.py → raw_jobs.csv
 
 ### 1. Clone the repo
 ```bash
-git clone https://github.com/your-username/salary-estimator.git
+git clone https://github.com/Ashutosh-Parve/salary-estimator.git
 cd salary-estimator
 ```
 
@@ -103,7 +103,7 @@ python data/cleaner.py
 
 ### 5. Set up the database
 ```bash
-psql -U your_user -d your_db -f database/schema.sql
+psql -U postgres -d salary_estimator -f database/schema.sql
 ```
 
 ### 6. Train the model
@@ -142,4 +142,4 @@ streamlit run app/streamlit_app.py
 
 ## Author
 
-**Ashutosh** — [GitHub](https://github.com/your-username) · [LinkedIn](https://linkedin.com/in/your-profile)
+**Ashutosh** — [GitHub](https://github.com/Ashutosh-Parve) · [LinkedIn](https://www.linkedin.com/in/ashutoshparve)
