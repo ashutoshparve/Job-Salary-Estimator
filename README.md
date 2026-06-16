@@ -128,7 +128,7 @@ streamlit run app/streamlit_app.py
 - [x] Phase 2 — SQL database schema and storage
 - [x] Phase 3 — ML model training and evaluation
 - [x] Phase 4 — FastAPI backend + query logging
-- [ ] Phase 5 — Streamlit frontend + deployment
+- [x] Phase 5 — Streamlit frontend (deployment pending)
 
 ---
 
