@@ -1,6 +1,7 @@
 import streamlit as st
 import requests
 import pickle
+import os
 
 st.set_page_config(
     page_title="Job Salary Estimator",
@@ -8,7 +9,8 @@ st.set_page_config(
     layout="centered"
 )
 
-API_URL = "http://127.0.0.1:8000"
+
+API_URL = os.getenv("API_URL", "http://127.0.0.1:8000")
 
 
 @st.cache_data
