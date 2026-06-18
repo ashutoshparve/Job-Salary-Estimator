@@ -7,6 +7,7 @@ import logging
 
 load_dotenv()
 
+os.makedirs("logs", exist_ok=True)
 logging.basicConfig(
     filename="logs/db.log",
     level=logging.INFO,
