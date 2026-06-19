@@ -5,7 +5,10 @@ An end-to-end machine learning web application that predicts job salaries based 
 ---
 
 ## Live Demo
-> Deployment in progress — link will be added after Phase 5
+> ## Live Demo
+- **Frontend (Streamlit)**: https://salary-estimator-frontend.onrender.com
+- **API (FastAPI)**: https://job-salary-estimator.onrender.com
+- **API Docs (Swagger)**: https://job-salary-estimator.onrender.com/docs
 
 ---
 
@@ -128,7 +131,7 @@ streamlit run app/streamlit_app.py
 - [x] Phase 2 — SQL database schema and storage
 - [x] Phase 3 — ML model training and evaluation
 - [x] Phase 4 — FastAPI backend + query logging
-- [x] Phase 5 — Streamlit frontend (deployment pending)
+- [x] Phase 5 — Streamlit frontend + deployment
 
 ---
 
