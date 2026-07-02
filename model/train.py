@@ -21,41 +21,57 @@ logging.basicConfig(
 def generate_sample_data(n=1000) -> pd.DataFrame:
     np.random.seed(42)
 
-    job_titles = [
-        'data analyst', 'software engineer', 'python developer',
-        'data scientist', 'backend developer', 'machine learning engineer'
-    ]
-    locations = ['mumbai', 'bangalore', 'hyderabad', 'pune', 'delhi', 'chennai', 'kolkata']
-    companies = [
-        'Infosys', 'TCS', 'Wipro', 'HCL', 'Tech Mahindra',
-        'Accenture', 'IBM', 'Capgemini', 'Cognizant', 'Amazon',
-        'Google', 'Microsoft', 'Flipkart', 'Swiggy', 'Zomato'
-    ]
+    records = []
 
-    salary_map = {
-        'data analyst': (3, 10),
-        'software engineer': (4, 18),
-        'python developer': (4, 16),
-        'data scientist': (6, 20),
-        'backend developer': (5, 18),
-        'machine learning engineer': (8, 25)
+    # Realistic salary rules — location and company tier affect salary
+    city_multiplier = {
+        'bangalore': 1.30, 'mumbai': 1.25, 'delhi': 1.20,
+        'hyderabad': 1.15, 'pune': 1.10, 'chennai': 1.05, 'kolkata': 0.90
+    }
+    company_tier = {
+        'Google': 1.5, 'Microsoft': 1.45, 'Amazon': 1.40,
+        'Flipkart': 1.25, 'Swiggy': 1.20, 'Zomato': 1.15,
+        'Accenture': 1.05, 'Cognizant': 1.0, 'Capgemini': 0.95,
+        'IBM': 1.0, 'Infosys': 0.90, 'TCS': 0.88,
+        'Wipro': 0.87, 'HCL': 0.86, 'Tech Mahindra': 0.85
+    }
+    base_salary = {
+        'data analyst': 6.0,
+        'software engineer': 8.0,
+        'python developer': 7.5,
+        'data scientist': 10.0,
+        'backend developer': 8.5,
+        'machine learning engineer': 12.0
     }
 
-    titles = np.random.choice(job_titles, n)
-    salaries = [round(np.random.uniform(*salary_map[t]), 1) for t in titles]
+    job_titles = list(base_salary.keys())
+    locations = list(city_multiplier.keys())
+    companies = list(company_tier.keys())
 
-    df = pd.DataFrame({
-        'job_title': titles,
-        'company': np.random.choice(companies, n),
-        'location': np.random.choice(locations, n),
-        'salary_lpa': salaries,
-    })
+    for _ in range(n):
+        title = np.random.choice(job_titles)
+        location = np.random.choice(locations)
+        company = np.random.choice(companies)
 
+        salary = (
+            base_salary[title]
+            * city_multiplier[location]
+            * company_tier[company]
+            * np.random.uniform(0.85, 1.15)  # small noise
+        )
+
+        records.append({
+            'job_title': title,
+            'company': company,
+            'location': location,
+            'salary_lpa': round(salary, 1),
+        })
+
+    df = pd.DataFrame(records)
     os.makedirs("data", exist_ok=True)
     df.to_csv("data/cleaned_jobs.csv", index=False)
-    logging.info(f"Generated {n} sample records")
+    logging.info(f"Generated {n} realistic sample records")
     return df
-
 
 def train_model():
     # Load data
