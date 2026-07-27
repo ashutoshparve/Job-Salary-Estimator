@@ -283,17 +283,13 @@ left, right = st.columns([1, 1.15], gap="medium")
 # Left panel — inputs
 # ---------------------------------------------------------------------------
 with left:
-    st.markdown('<div class="panel">', unsafe_allow_html=True)
     st.markdown('<div class="panel-label">Role parameters</div>', unsafe_allow_html=True)
-
     job_title = st.selectbox("Job title", options["job_titles"])
     location = st.selectbox("Location", options["locations"])
     company = st.selectbox("Company", options["companies"])
-
     st.write("")
     predict_clicked = st.button("Estimate salary →")
-    st.markdown('</div>', unsafe_allow_html=True)
-
+    
     if predict_clicked:
         with st.spinner(""):
             try:
