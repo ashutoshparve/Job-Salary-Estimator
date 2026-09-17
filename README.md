@@ -135,13 +135,29 @@ streamlit run app/streamlit_app.py
 
 ---
 
+## Project Stats
+
+| Metric | Value |
+|---|---|
+| Model Algorithm | Random Forest Regressor |
+| Accuracy (R² Score) | 0.83 (83%) |
+| Mean Absolute Error | ±₹1.10 LPA |
+| API Response Time | ~80ms |
+| Training Records | 1,000+ |
+| Database Tables | 2 (job_listings, user_queries) |
+| Deployment | Render (free tier) |
+
+## Live Demo
+- **Frontend**: https://salary-estimator-frontend.onrender.com
+- **API**: https://job-salary-estimator.onrender.com
+- **API Docs**: https://job-salary-estimator.onrender.com/docs
+
 ## What I Learned
-
 - How to scrape and handle real-world messy data (salary strings in multiple formats)
-- How to structure Python projects outside of Jupyter notebooks
-- How production ML systems log predictions for future retraining
-
----
+- Why synthetic data quality directly impacts model accuracy (improved R² from 0.17 → 0.83 by adding realistic salary patterns)
+- How to structure Python projects outside of Jupyter notebooks using modular `.py` files
+- How production ML systems log predictions for future retraining via a `user_queries` table
+- How to deploy a two-service architecture (API + frontend) on cloud infrastructure
 
 ## Author
 
