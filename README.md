@@ -1,6 +1,3 @@
-# Job Salary Estimator
-
-An end-to-end machine learning web application that predicts job salaries based on role, location, and experience — built with real-world scraped data, not a Kaggle CSV.
 
 ---
 
